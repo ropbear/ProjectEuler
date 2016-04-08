@@ -97,4 +97,57 @@ def FLP():
 				pal = prod
 	return pal
 
+#######################################
+
+
+###############PROBLEM 5###############
+#Smallest Multiple
+#2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+#What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+
+def SmlMul(n):
+	least = 0
+	mul = 1
+	for num in range(2,n+1):
+		mul *= num
+	low = n
+	num = 1
+	while num != mul:
+		for num2 in range(n,0,-1):
+			if num%num2 == 0:
+				low = num2
+				if low == 1:
+					return num
+			elif num%num2 != 0:
+				break
+		num += 1
+
+#######################################
+
+
+###############PROBLEM 6###############
+#Sum square difference
+#The sum of the squares of the first ten natural numbers is,
+#1^2 + 2^2 + ... + 10^2 = 385
+#The square of the sum of the first ten natural numbers is,
+#(1 + 2 + ... + 10)^2 = 55^2 = 3025
+#Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+#Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+
+
+#######################################
+
+
+###############PROBLEM 7###############
+#10001st prime
+#By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+#What is the 10 001st prime number?
+
+
+
+
+
+
 
