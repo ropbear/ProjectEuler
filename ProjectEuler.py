@@ -135,7 +135,15 @@ def SmlMul(n):
 #Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
 #Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-
+def SSDif(n):
+	l1 = []
+	summ = 0
+	for num in range(1,n+1):
+		l1.append(num*num)
+		summ += num
+	summ *= summ
+	return summ - sum(l1)
+	
 
 #######################################
 
@@ -145,9 +153,18 @@ def SmlMul(n):
 #By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 #What is the 10 001st prime number?
 
-
-
-
+def primeID(n):
+	found = False
+	num = 0
+	count = 0
+	while found == False:
+		if list_divisors(num) == [1]:
+			count += 1
+			if count == n:
+				return num
+		num += 1
+		
+# i can probalby make a better isPrime function than using list divisors...
 
 
 
