@@ -1,7 +1,7 @@
 #PROJECT EULER
 #This is practice to keep my python knowledge updated and refreshed.
 import math
-
+import timeit
 
 
 ###############PROBLEM 1###############
@@ -51,7 +51,7 @@ def efibs(limit):
 
 def list_divisors(n): #this can be improved upon, it's super slow dealing with ints that have 9 digits or more
 	dlist = []
-	for d in range(1,(n//2)+1):
+	for d in range(1,int(math.sqrt(n))+1):
 		if n%d == 0:
 			dlist.append(d)
 	return dlist
@@ -219,6 +219,64 @@ def SPT(n):
 					trips[0] += 1
 
 
+
+#######################################
+
+
+###############PROBLEM 10###############
+#Summation of primes
+#The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+#Find the sum of all the primes below two million.
+
+def SOP(n):
+	total = 2
+	x = 3
+	while x <= n:
+		state = True
+		for div in range(2,(x//2)+1):
+			if x%div == 0:
+				state = False 
+		if state == True:
+			total += x
+		x += 2
+	return total
+
+
+#	t = []
+#	for num in range(start,n+1):
+#		state = True
+#		for d in range(2,(num//2)+1):
+#			if num%d == 0:
+#				state = False
+#				break
+#		if state == True:
+#			t.insert(0,num)
+#	return sum(t)
+
+#	stack = [2]
+#	while start <= n:
+#		divs = [1]
+#		for number in range(2,start):
+#			if start%number == 0:
+#				divs.insert(0,number)
+#				break
+#		if divs == [1]:
+#			stack.insert(0,start)
+#		start += 2
+#	return sum(stack)
+
+
+#double for loop editing stack?
+		
+
+#NEED TO HANDLE THIS WITH A STACK
+def split1(n):
+	s = []
+	s.insert(0,SOP(3,10000))
+	for n in range(1,(n//10000)):
+		print(n)
+		s.insert(0,SOP((10000*n)-1,10000*(n+1)))
+	return sum(s)
 
 #######################################
 
