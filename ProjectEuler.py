@@ -296,16 +296,6 @@ def split1(n):
 
 
 ###############PROBLEM 11###############
-
-
-
-
-
-
-#######################################
-
-
-###############PROBLEM 12###############
 #What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
 def gridProd():
@@ -329,6 +319,17 @@ def gridProd():
 			if maxmul < max(right,down,adj,adj2):
 				maxmul = max(right,down,adj,adj2)
 	return maxmul
+
+
+
+
+#######################################
+
+
+###############PROBLEM 12###############
+
+
+
 
 
 #######################################
