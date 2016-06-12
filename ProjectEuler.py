@@ -223,7 +223,7 @@ def SPT(n):
 #######################################
 
 
-###############PROBLEM 10###############
+###############PROBLEM 10##############
 #Summation of primes
 #The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 #Find the sum of all the primes below two million.
@@ -295,7 +295,7 @@ def split1(n):
 
 
 
-###############PROBLEM 11###############
+###############PROBLEM 11##############
 #What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
 
 def gridProd():
@@ -326,7 +326,7 @@ def gridProd():
 #######################################
 
 
-###############PROBLEM 12###############
+###############PROBLEM 12##############
 #What is the value of the first triangle number to have over five hundred divisors?
 
 def triangles(div):
@@ -344,7 +344,7 @@ def triangles(div):
 #######################################
 
 
-###############PROBLEM 13###############
+###############PROBLEM 13##############
 #Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 
 def bigs():
@@ -364,7 +364,7 @@ def bigs():
 #######################################
 
 
-###############PROBLEM 14###############
+###############PROBLEM 14##############
 #Using the rule n-> n/2 (n is even) and n-> 3n+1 (n is odd), which starting number (n0) under one million produces the longest chain,
 #assuming every number goes to 1 with this sequence? (Collatz Problem)
 
@@ -389,5 +389,47 @@ def lcollatz(mahx):
 	return count[1]
 	
 #######################################
+
+
+###############PROBLEM 15##############
+#Starting in the top left corner of a 2x2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner. 
+#How many routes for a 20 by 20 grid?
+def grid(n):
+	n += 2
+	g = [[0]*n]*n
+	n -= 1
+	g[n-1][n] = 1
+	g[n][n-1] = 1
+	for x in range(n):
+		for y in range(n):
+			g[(n-2)-x][(n-2)-y] = g[(n-1)-x][(n-2)-y]+g[(n-2)-x][(n-1)-y]
+	return g[0][0]
+
+#dealing with n is really messy here because of the difference between the way it was solved and user friendliness. Also an easy fix for index out of range
+
+#######################################
+
+
+###############PROBLEM 16##############
+
+
+
+
+
+
+
+#######################################
+
+
+
+
+
+
+
+
+
+
+
+
 
 
