@@ -17,7 +17,12 @@ def days(date):
 	thirties = [4,6,9,11]
 	working_date = [1,1,1901] # [1, Jan, 1900]
 	count = 0
+	sundays = 0
+	days = ['Su','M','Tu','W','Th','F','Sa']
 	while working_date != date:
+		if days[count%7] == 'Su' and working_date[0] == 1:
+			sundays += 1
+
 		leap = False
 		if working_date[2]%4 == 0:
 			if working_date[2]%1000 == 0:
@@ -49,11 +54,10 @@ def days(date):
 				working_date[1] += 1
 			else:
 				working_date[0] += 1
-
 		count += 1
-	return count
+	return sundays
 
 if __name__ == '__main__':
 	i = days([31,12,2000])
-	print(i//7)
+	print(i)
 
